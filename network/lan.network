@@ -1,0 +1,40 @@
+[Match]
+# network device
+Name=end0
+
+[Network]
+# enable ipforward (ipv4 and ipv6)
+IPForward=yes
+
+### ipv4 stuff ###
+# static ip
+Address=192.168.0.1/24
+# vlan name
+VLAN=wan
+# enable dhcpv4
+DHCPServer=yes
+
+### ipv6 ###
+# subnet delegation
+DHCPPrefixDelegation=yes
+# enable ra for local network
+IPv6SendRA=yes
+# disable ra for router
+IPv6AcceptRA=no
+
+# ipv6 delegation
+[DHCPPrefixDelegation]
+UplinkInterface=wan
+SubnetId=1
+
+# ipv4 dhcp server
+[DHCPServer]
+#Offset ip leases
+PoolOffset=100
+DNS=_server_address
+
+# ipv4 static leases
+[DHCPServerStaticLease]
+# ipv4 static lease
+#MACAddress=xx:yy:zz:aa:bb:cc
+#Address=192.168.0.2

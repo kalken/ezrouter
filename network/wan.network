@@ -1,0 +1,26 @@
+[Match]
+Name=wan
+
+[Network]
+DHCP=yes
+
+# ipv6 settings
+IPv6PrivacyExtensions=yes
+
+# The below setting is optional, to also assign an address in the delegated prefix
+# to the upstream interface. If not necessary, then comment out the line below and
+# the [DHCPPrefixDelegation] section.
+DHCPPrefixDelegation=yes
+
+# If the upstream network provides Router Advertisement with Managed bit set,
+# then comment out the line below and WithoutRA= setting in the [DHCPv6] section.
+#IPv6AcceptRA=no
+
+[DHCPv6]
+#WithoutRA=solicit
+PrefixDelegationHint=::/56
+
+[DHCPPrefixDelegation]
+UplinkInterface=:self
+SubnetId=0
+Announce=no
