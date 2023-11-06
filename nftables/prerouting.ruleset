@@ -1,4 +1,2 @@
-# redirect to ssh to other internal ip
-# tcp dport 6022 dnat to 192.168.0.2:22
-# redirect et to other internal ip
-# tcp dport 2022 dnat to 192.168.0.2
+# redirect port 6022 on public ip to other internal ip port 22
+# ip daddr [replace_with_public_ip] tcp dport 6022 dnat to 192.168.0.2:22

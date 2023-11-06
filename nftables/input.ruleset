@@ -1,3 +1,11 @@
-# example open port 443
+# allow everything from lan
+iifname $lan accept
+
+
+# example open port 443 for wan
 #iifname $wan tcp dport 443 accept
 #iifname $wan udp dport 443 accept
+
+
+# example open ssh with limits
+# iifname $wan tcp dport ssh ct state new meter ssh { ip saddr limit rate 20/hour } accept

@@ -1,3 +1,0 @@
-# example open port 443
-#iifname $wan tcp dport 443 accept
-#iifname $wan udp dport 443 accept

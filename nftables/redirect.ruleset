@@ -1,4 +1,0 @@
-# redirect to ssh to other internal ip
-# tcp dport 6022 dnat to 192.168.0.2:22
-# redirect et to other internal ip
-# tcp dport 2022 dnat to 192.168.0.2
