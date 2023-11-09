@@ -89,3 +89,40 @@ This example assumes lan is named **end0**, WAN is **vlan 2** in the switch and 
     
     # reboot
     # done!
+
+## Tips & Trix
+
+### Opening Ports
+    Local ports: /etc/nftables/input.ruleset
+    Forward ports: /etc/nftables/prerouting.ruleset
+
+### Secure ssh
+To secure a linux box, you should always disable password and root login:
+    
+    # edit /etc/ssh/sshd_config
+    PermitRootLogin no
+    PasswordAuthentication no
+    
+### Automatic updates
+Make sure to patch the router:
+     
+    # Example: /etc/apt/apt.conf.d/50unattended-upgrades (on armbian)
+    
+    // apt-cache policy to check available parameters
+    // unattended-upgrades -d to manually run
+
+    Unattended-Upgrade::Origins-Pattern {
+        "n=bookworm";
+        "n=bookworm-updates";
+        "n=bookworm-security";
+        "n=bookworm-backports";
+    };
+
+    // Python regular expressions, matching packages to exclude from upgrading
+    Unattended-Upgrade::Package-Blacklist {
+    };
+    Unattended-Upgrade::Automatic-Reboot "true";
+    Unattended-Upgrade::Automatic-Reboot-Time "06:00";
+
+
+
