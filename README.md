@@ -97,7 +97,7 @@ This example assumes lan is named **end0**, WAN is **vlan 2** in the switch and 
     Forward ports: /etc/nftables/prerouting.ruleset
 
 ### Secure ssh
-To secure a linux box, you should always disable password and root login:
+To secure a linux box, you should always use ssh-keys and disable password/root login:
     
     # edit /etc/ssh/sshd_config
     PermitRootLogin no
