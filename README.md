@@ -16,7 +16,7 @@ Simple dual stack (ipv6/ipv4) router that money can't buy.
 ## Long story
 
 ### what is a router?
-A "router" is basically a computer with the following characteristics:
+A home or business "router" is usually a bit more than just a router. It might have all following characteristics:
 
 * 2 network cards (lan/wan)
 * DHCP-server (nat ips to local network)
