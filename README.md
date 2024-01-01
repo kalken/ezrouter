@@ -1,6 +1,8 @@
 # ezrouter
 Simple dual stack (ipv6/ipv4) router that money can't buy.
 
+Use these setup files to turn any linux computer into a full fledged router for your network. It should work on any distribution running systemd.
+
 ## Key features:
 * Should work on any hardware that has GNU Linux support
 * No external dependencies except a distribution that supports nftables and systemd.
