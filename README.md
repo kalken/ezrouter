@@ -106,8 +106,7 @@ To secure a linux box, you should always use ssh-keys and disable password/root 
     PasswordAuthentication no
     
 ### Automatic updates
-Make sure to patch the router:
-    # Example: /etc/apt/apt.conf.d/02-armbian-periodic (on armbian)
+    /etc/apt/apt.conf.d/02-armbian-periodic (on armbian)
 
     APT::Periodic::Update-Package-Lists "1";
     APT::Periodic::Unattended-Upgrade "1";
