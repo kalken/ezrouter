@@ -107,9 +107,12 @@ To secure a linux box, you should always use ssh-keys and disable password/root 
     
 ### Automatic updates
 Make sure to patch the router:
-     
-    # Example: /etc/apt/apt.conf.d/50unattended-upgrades (on armbian)
-    
+    # Example: /etc/apt/apt.conf.d/02-armbian-periodic (on armbian)
+
+    APT::Periodic::Update-Package-Lists "1";
+    APT::Periodic::Unattended-Upgrade "1";
+    APT::Periodic::AutocleanInterval "7";
+
     // apt-cache policy to check available parameters
     // unattended-upgrades -d to manually run
 
@@ -125,6 +128,3 @@ Make sure to patch the router:
     };
     Unattended-Upgrade::Automatic-Reboot "true";
     Unattended-Upgrade::Automatic-Reboot-Time "06:00";
-
-
-
